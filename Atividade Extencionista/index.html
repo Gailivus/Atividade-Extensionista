@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peixes do Rio Tibagi - Ictiofauna Atualizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #2e7d32;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #d1e5d4;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 10px;
+            color: #1b5e20;
+        }
+
+        .peixe {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .peixe:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .peixe img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .peixe-content {
+            flex-grow: 1;
+        }
+
+        .descricao {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 0 0 0;
+            border-top: 1px solid #ccc;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .peixe.ativo .descricao {
+            display: block;
+        }
+
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        /* Cores das Categorias */
+        .protegida {
+            border-left: 8px solid #f44336; /* Vermelho: Perigo */
+        }
+
+        .invasora {
+            border-left: 8px solid #ff9800; /* Laranja: Alerta */
+        }
+
+        .nativa {
+            border-left: 8px solid #4caf50; /* Verde: Equilíbrio */
+        }
+
+        /* Ícone da seta */
+        .seta {
+            position: absolute;
+            right: 20px;
+            top: 25px;
+            font-size: 22px;
+            transition: transform 0.3s ease-in-out;
+            color: #333;
+        }
+
+        .peixe.ativo .seta {
+            transform: rotate(180deg);
+        }
+
+        /* Layout Responsivo */
+        @media (max-width: 768px) {
+            .peixe {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .peixe img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .seta {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Peixes do Rio Tibagi</h1>
+        <p>Conheça as espécies nativas, protegidas e invasoras do nosso rio</p>
+    </header>
+
+    <nav>
+        <a href="#nativas">Nativas</a>
+        <a href="#protegidas">Protegidas</a>
+        <a href="#invasoras">Invasoras</a>
+    </nav>
+
+    <section id="nativas">
+        <h2>🐟 Peixes Nativos — Equilíbrio do Ecossistema</h2>
+
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/dourado.jpg" alt="Dourado">
+            <div class="peixe-content">
+                <h3>Dourado (Salminus brasiliensis)</h3>
+                <p>Predador topo de cadeia, conhecido como o "Rei do Rio".</p>
+                <div class="descricao">
+                    O dourado é um peixe migrador que realiza longas viagens (piracema). É um predador voraz de peixes menores e sua presença indica a saúde do rio. Espécie muito visada na pesca esportiva (pesque e solte).
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/pintado.jpg" alt="Pintado">
+            <div class="peixe-content">
+                <h3>Pintado (Pseudoplatystoma corruscans)</h3>
+                <p>Siluriforme (bagre) de grande porte e valor comercial/esportivo.</p>
+                <div class="descricao">
+                    Habita regiões de águas profundas e corredeiras. É um predador noturno de outros peixes e crustáceos. Sua população sofre pressão devido à pesca e represamentos.
+                </div>
+            </div>
+        </div>
+        
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/piapara.jpg" alt="Piapara">
+            <div class="peixe-content">
+                <h3>Piapara (Leporinus friderici / L. obtusidens)</h3>
+                <p>Peixe migrador importante, parte da família dos piau.</p>
+                <div class="descricao">
+                    A piapara realiza migrações para reprodução. Possui escamas prateadas e se alimenta de vegetais, insetos e pequenos peixes. É uma espécie comum em toda a Bacia do Paraná.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/curimba.jpg" alt="Curimba">
+            <div class="peixe-content">
+                <h3>Curimba (Prochilodus lineatus)</h3>
+                <p>Peixe migrador essencial para a limpeza do leito do rio.</p>
+                <div class="descricao">
+                    Conhecida como "faxineira" do rio, alimenta-se de detritos e material orgânico no fundo, ajudando na ciclagem de nutrientes e oxigenação do sedimento. Realiza longas piracemas.
+                </div>
+            </div>
+        </div>
+        
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/traira.jpg" alt="Traíra">
+            <div class="peixe-content">
+                <h3>Traíra (Hoplias malabaricus)</h3>
+                <p>Predador de emboscada, resistente e amplamente distribuído.</p>
+                <div class="descricao">
+                    Adapta-se a ambientes lênticos (água parada) e lóticos (água corrente). É um predador territorial que se alimenta de outros peixes, anfíbios e invertebrados.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe nativa">
+            <span class="seta">▼</span>
+            <img src="imagens/lambari.jpg" alt="Lambari">
+            <div class="peixe-content">
+                <h3>Lambari (Astyanax spp. e outras)</h3>
+                <p>Pequeno peixe que serve de base para toda a cadeia alimentar.</p>
+                <div class="descricao">
+                    Várias espécies de *Astyanax* são nativas do Tibagi. Vivem em cardumes e são essenciais na dieta de peixes carnívoros, aves e mamíferos. Sua abundância é um bom indicador da qualidade da água.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="protegidas">
+        <h2>🚫 Espécies Protegidas — Ameaçadas de Extinção (Devolver ao Rio)</h2>
+
+        <div class="peixe protegida">
+            <span class="seta">▼</span>
+            <img src="imagens/piracanjuba.jpg" alt="Piracanjuba">
+            <div class="peixe-content">
+                <h3>Piracanjuba (Brycon orbignyanus)</h3>
+                <p>**CRITICAMENTE AMEAÇADA.** Um dos principais alvos de conservação.</p>
+                <div class="descricao">
+                    Peixe migrador de longa distância, essencialmente frutívoro (come frutas e sementes). Sua população foi drasticamente reduzida por barragens e poluição. Sua pesca é **totalmente proibida**.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe protegida">
+            <span class="seta">▼</span>
+            <img src="imagens/surubim.jpg" alt="Surubim-letra">
+            <div class="peixe-content">
+                <h3>Surubim-letra (Steindachneridion scriptum)</h3>
+                <p>**AMEAÇADA (Em Perigo - EN).** Bagre de grande porte.</p>
+                <div class="descricao">
+                    Um dos grandes bagres da Bacia do Alto Paraná. Está ameaçado pela degradação do habitat (barragens e desmatamento). A captura e o transporte são proibidos por lei para garantir sua recuperação.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe protegida">
+            <span class="seta">▼</span>
+            <img src="imagens/pacu.jpg" alt="Pacu">
+            <div class="peixe-content">
+                <h3>Pacu (Piaractus mesopotamicus)</h3>
+                <p>Espécie frugívora importante, frequentemente com pesca restrita.</p>
+                <div class="descricao">
+                    Sua dieta baseada em frutos e sementes o torna vital para a dispersão vegetal. Embora nativo, muitas regiões do Paraná impõem restrições de tamanho ou período de pesca para proteger a população.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="invasoras">
+        <h2>⚠️ Espécies Invasoras — Prejuízo à Biodiversidade (Incentivo à Pesca)</h2>
+
+        <div class="peixe invasora">
+            <span class="seta">▼</span>
+            <img src="imagens/tilapia.jpg" alt="Tilápia-do-Nilo">
+            <div class="peixe-content">
+                <h3>Tilápia (Oreochromis niloticus)</h3>
+                <p>Espécie africana, uma das mais disseminadas e nocivas.</p>
+                <div class="descricao">
+                    Introduzida pela piscicultura, a Tilápia compete diretamente por alimento com os peixes nativos. Sua reprodução rápida e seu comportamento territorialista afetam a desova das espécies locais.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe invasora">
+            <span class="seta">▼</span>
+            <img src="imagens/tucunare.jpg" alt="Tucunaré">
+            <div class="peixe-content">
+                <h3>Tucunaré (Cichla spp.)</h3>
+                <p>Predador introduzido para pesca esportiva, ameaça alevinos nativos.</p>
+                <div class="descricao">
+                    Originário da Bacia Amazônica, o Tucunaré é um predador altamente agressivo que se alimenta de ovos, larvas e alevinos, causando grande desequilíbrio na cadeia alimentar local. Sua pesca é incentivada.
+                </div>
+            </div>
+        </div>
+
+        <div class="peixe invasora">
+            <span class="seta">▼</span>
+            <img src="imagens/corvina.jpg" alt="Corvina">
+            <div class="peixe-content">
+                <h3>Corvina (Plagioscion squamosissimus)</h3>
+                <p>Introduzida para aquicultura, estabeleceu-se como predador dominante.</p>
+                <div class="descricao">
+                    Originária de outras bacias, a Corvina é uma espécie generalista que se adapta muito bem a reservatórios e trechos do rio. Afeta a reprodução de peixes nativos, competindo e predando.
+                </div>
+            </div>
+        </div>
+        
+        <div class="peixe invasora">
+            <span class="seta">▼</span>
+            <img src="imagens/carpa.jpg" alt="Carpa-comum">
+            <div class="peixe-content">
+                <h3>Carpa (Cyprinus carpio)</h3>
+                <p>Espécie originária da Europa/Ásia, afeta o fundo do rio.</p>
+                <div class="descricao">
+                    Introduzida para a piscicultura, a Carpa revira o sedimento do fundo em busca de alimento, aumentando a turbidez da água e dificultando a vida de peixes que dependem de águas claras e limpas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Atividade Extensionista — Mergulho no conhecimento — Protótipo funcional acadêmico — Estevão Hartman de Andrade — Uninter</p>
+        <p><small>Dados atualizados com base em estudos da ictiofauna da Bacia do Rio Tibagi e listas de espécies ameaçadas do Paraná (ICMBio/IAT).</small></p>
+    </footer>
+
+    <script>
+        const peixes = document.querySelectorAll('.peixe');
+        peixes.forEach(peixe => {
+            peixe.addEventListener('click', () => {
+                peixe.classList.toggle('ativo');
+                const seta = peixe.querySelector('.seta');
+                if (peixe.classList.contains('ativo')) {
+                    seta.textContent = '▲'; 
+                } else {
+                    seta.textContent = '▼';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
